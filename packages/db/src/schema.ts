@@ -1,8 +1,8 @@
 import { pgTable, text, timestamp, integer, boolean, jsonb } from 'drizzle-orm/pg-core';
-import { createId } from '@paralleldrive/cuid2';
+import { randomUUID } from 'crypto';
 
 export const users = pgTable('users', {
-  id: text('id').$defaultFn(() => createId()).primaryKey(),
+  id: text('id').$defaultFn(() => randomUUID()).primaryKey(),
   email: text('email').notNull().unique(),
   passwordHash: text('password_hash').notNull(),
   name: text('name'),
@@ -10,7 +10,7 @@ export const users = pgTable('users', {
 });
 
 export const subscriptions = pgTable('subscriptions', {
-  id: text('id').$defaultFn(() => createId()).primaryKey(),
+  id: text('id').$defaultFn(() => randomUUID()).primaryKey(),
   userId: text('user_id').references(() => users.id).notNull(),
   tier: text('tier').notNull(), // 'free' | 'pro'
   stripeCustomerId: text('stripe_customer_id'),
@@ -21,7 +21,7 @@ export const subscriptions = pgTable('subscriptions', {
 });
 
 export const projects = pgTable('projects', {
-  id: text('id').$defaultFn(() => createId()).primaryKey(),
+  id: text('id').$defaultFn(() => randomUUID()).primaryKey(),
   userId: text('user_id').references(() => users.id).notNull(),
   name: text('name').notNull(),
   stitchProjectId: text('stitch_project_id'),
@@ -34,7 +34,7 @@ export const projects = pgTable('projects', {
 });
 
 export const templates = pgTable('templates', {
-  id: text('id').$defaultFn(() => createId()).primaryKey(),
+  id: text('id').$defaultFn(() => randomUUID()).primaryKey(),
   name: text('name').notNull(),
   description: text('description'),
   category: text('category').notNull(), // 'saas' | 'portfolio' | 'ecommerce' | 'blog'
@@ -46,7 +46,7 @@ export const templates = pgTable('templates', {
 });
 
 export const exports = pgTable('exports', {
-  id: text('id').$defaultFn(() => createId()).primaryKey(),
+  id: text('id').$defaultFn(() => randomUUID()).primaryKey(),
   projectId: text('project_id').references(() => projects.id).notNull(),
   userId: text('user_id').references(() => users.id).notNull(),
   exportType: text('export_type').notNull(), // 'nextjs' | 'html'
