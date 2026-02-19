@@ -1,0 +1,23 @@
+import { auth } from '@/auth';
+import { NextResponse } from 'next/server';
+
+export default auth((req) => {
+  const { nextUrl, auth: session } = req;
+  const isLoggedIn = !!session;
+  const isAuthRoute = nextUrl.pathname.startsWith('/auth/');
+  const isDashboardRoute = nextUrl.pathname.startsWith('/dashboard');
+  const isApiAuthRoute = nextUrl.pathname.startsWith('/api/auth');
+
+  if (isApiAuthRoute) return NextResponse.next();
+  if (isLoggedIn && isAuthRoute) return NextResponse.redirect(new URL('/dashboard', nextUrl));
+  if (!isLoggedIn && isDashboardRoute) {
+    const loginUrl = new URL('/auth/login', nextUrl);
+    loginUrl.searchParams.set('callbackUrl', nextUrl.pathname);
+    return NextResponse.redirect(loginUrl);
+  }
+  return NextResponse.next();
+});
+
+export const config = {
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+};
