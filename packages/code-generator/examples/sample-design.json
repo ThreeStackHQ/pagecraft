@@ -1,0 +1,244 @@
+{
+  "projectId": "proj_123",
+  "screenId": "screen_456",
+  "deviceType": "desktop",
+  "theme": {
+    "colors": {
+      "primary": "#6366f1",
+      "secondary": "#8b5cf6",
+      "accent": "#ec4899",
+      "background": "#ffffff",
+      "text": "#1f2937",
+      "muted": "#6b7280"
+    },
+    "fonts": {
+      "heading": "Inter",
+      "body": "Inter"
+    }
+  },
+  "elements": [
+    {
+      "id": "hero-1",
+      "type": "hero",
+      "style": {
+        "layout": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "padding": "16",
+        "backgroundColor": "#f9fafb",
+        "height": "screen"
+      },
+      "children": [
+        {
+          "id": "hero-heading",
+          "type": "heading",
+          "props": {
+            "text": "Build Your Landing Page in Minutes"
+          },
+          "style": {
+            "fontSize": "5xl",
+            "fontWeight": "bold",
+            "textColor": "#1f2937",
+            "margin": "4"
+          }
+        },
+        {
+          "id": "hero-subtext",
+          "type": "text",
+          "props": {
+            "text": "AI-powered design generation with production-ready Next.js code"
+          },
+          "style": {
+            "fontSize": "xl",
+            "textColor": "#6b7280",
+            "margin": "4"
+          }
+        },
+        {
+          "id": "hero-cta",
+          "type": "button",
+          "props": {
+            "text": "Get Started",
+            "href": "/signup",
+            "variant": "primary"
+          },
+          "style": {
+            "backgroundColor": "#6366f1",
+            "textColor": "#ffffff",
+            "padding": "4",
+            "borderRadius": "lg",
+            "fontSize": "lg",
+            "fontWeight": "semibold",
+            "margin": "8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "features-1",
+      "type": "features",
+      "style": {
+        "layout": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "padding": "16",
+        "backgroundColor": "#ffffff"
+      },
+      "children": [
+        {
+          "id": "features-heading",
+          "type": "heading",
+          "props": {
+            "text": "Powerful Features"
+          },
+          "style": {
+            "fontSize": "4xl",
+            "fontWeight": "bold",
+            "textColor": "#1f2937",
+            "margin": "8"
+          }
+        },
+        {
+          "id": "features-grid",
+          "type": "container",
+          "style": {
+            "layout": "grid",
+            "gap": 8
+          },
+          "children": [
+            {
+              "id": "feature-1",
+              "type": "container",
+              "style": {
+                "layout": "flex",
+                "flexDirection": "column",
+                "padding": "6",
+                "borderRadius": "lg",
+                "backgroundColor": "#f9fafb"
+              },
+              "children": [
+                {
+                  "id": "feature-1-title",
+                  "type": "heading",
+                  "props": {
+                    "text": "AI Design"
+                  },
+                  "style": {
+                    "fontSize": "xl",
+                    "fontWeight": "semibold",
+                    "margin": "2"
+                  }
+                },
+                {
+                  "id": "feature-1-desc",
+                  "type": "text",
+                  "props": {
+                    "text": "Generate beautiful designs from text prompts"
+                  },
+                  "style": {
+                    "textColor": "#6b7280"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "feature-2",
+              "type": "container",
+              "style": {
+                "layout": "flex",
+                "flexDirection": "column",
+                "padding": "6",
+                "borderRadius": "lg",
+                "backgroundColor": "#f9fafb"
+              },
+              "children": [
+                {
+                  "id": "feature-2-title",
+                  "type": "heading",
+                  "props": {
+                    "text": "Clean Code"
+                  },
+                  "style": {
+                    "fontSize": "xl",
+                    "fontWeight": "semibold",
+                    "margin": "2"
+                  }
+                },
+                {
+                  "id": "feature-2-desc",
+                  "type": "text",
+                  "props": {
+                    "text": "Production-ready Next.js + TailwindCSS"
+                  },
+                  "style": {
+                    "textColor": "#6b7280"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "feature-3",
+              "type": "container",
+              "style": {
+                "layout": "flex",
+                "flexDirection": "column",
+                "padding": "6",
+                "borderRadius": "lg",
+                "backgroundColor": "#f9fafb"
+              },
+              "children": [
+                {
+                  "id": "feature-3-title",
+                  "type": "heading",
+                  "props": {
+                    "text": "One-Click Deploy"
+                  },
+                  "style": {
+                    "fontSize": "xl",
+                    "fontWeight": "semibold",
+                    "margin": "2"
+                  }
+                },
+                {
+                  "id": "feature-3-desc",
+                  "type": "text",
+                  "props": {
+                    "text": "Deploy to Vercel with a single click"
+                  },
+                  "style": {
+                    "textColor": "#6b7280"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer-1",
+      "type": "footer",
+      "style": {
+        "layout": "flex",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "padding": "8",
+        "backgroundColor": "#1f2937",
+        "textColor": "#ffffff"
+      },
+      "children": [
+        {
+          "id": "footer-text",
+          "type": "text",
+          "props": {
+            "text": "© 2026 PageCraft. Built with ❤️"
+          },
+          "style": {
+            "textColor": "#9ca3af"
+          }
+        }
+      ]
+    }
+  ]
+}
